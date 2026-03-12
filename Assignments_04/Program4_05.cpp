@@ -90,11 +90,13 @@ int main()
     cout << "Enter a Number : \n";
     cin >> iValue;
 
+    // Object created
     FactorDifference fobj(iValue);
 
-    iRet = fobj.FactorDiff();
+    iRet = fobj.FactorDiff();        // Function Call.
 
     cout << "Difference between Factor and Non Factor Summation is : " << iRet << "\n";
 
     return 0;
+
 }
