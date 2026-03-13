@@ -1,0 +1,94 @@
+/* 
+    4. Write a program which accepts N from user and print all odd numbers up to N.
+
+    Input  : 18
+
+    Output : 1 3 5 7 9 11 13
+
+*/
+
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Class Name       : PrintOddNumbers
+//  Description      : Contains function to print all odd numbers up to the given number.
+//  Input            : Integer iNo - Number till which odd numbers should be printed
+//  Output           : Prints odd numbers on screen
+//  Author           : Gavade Somanath Vilas
+//  Date             : 13/03/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class PrintOddNumbers
+{
+    public:
+        int iNo;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Constructor Name : PrintOddNumbers (Parameterized Constructor)
+//  Description      : Initializes data member with the given integer value.
+//  Input            : Integer
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        PrintOddNumbers(int A)
+        {
+            iNo = A;
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name    : Display
+//  Description      : Prints all odd numbers up to the given number.
+//  Input            : None (Uses class data member)
+//  Output           : Displays odd numbers on screen
+//  Time Complexity  : O(N)
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // Function Definition
+        void Display()
+        {
+            int iCnt = 0;
+
+            if(iNo < 0)
+            {
+                iNo = -(iNo);
+            }
+
+            for(iCnt = 1; iCnt <= iNo; iCnt++)
+            {
+                if(iCnt % 2 != 0)
+                {
+                    cout << iCnt << "\t";
+                }
+            }
+
+            cout << "\n";
+        }
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Application Name : Print Odd Numbers Till N using OOP
+//  Description      : This application accepts a number from user, creates an object of PrintOddNumbers class,
+//                     and prints all odd numbers up to the given number.
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iValue = 0;
+
+    cout << "Enter a Number : \n";
+    cin >> iValue;
+
+    PrintOddNumbers pobj(iValue);
+
+    pobj.Display();
+
+    return 0;
+}
