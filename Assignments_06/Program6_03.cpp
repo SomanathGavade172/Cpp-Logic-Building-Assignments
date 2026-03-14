@@ -90,9 +90,10 @@ int main()
     cout << "Enter a Number : \n";
     cin >> iValue;
 
+    // Create a object of a class
     Factorial fobj(iValue);
 
-    iRet = fobj.Calculate();
+    iRet = fobj.Calculate();         // Function Call
 
     cout << "Factorial is : " << iRet << "\n";
 
