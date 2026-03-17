@@ -78,9 +78,10 @@ int main()
     cout << "Enter Area in Square Feet : \n";
     cin >> fValue;
 
+    // Create object of a Class
     Area aobj(fValue);
 
-    dRet = aobj.SquareMeter();
+    dRet = aobj.SquareMeter();        // Function Call
 
     cout << fValue << " Square Feet is = " << dRet << " Square Meter.\n";
 
