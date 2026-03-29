@@ -1,0 +1,99 @@
+/* 
+    4. Write a program to find the odd factorial of a given number.
+    
+    Input  : 5
+    Output : 15  (5 * 3 * 1)
+
+    Input  : -5
+    Output : 15  (5 * 3 * 1)
+
+    Input  : 10
+    Output : 945  (9 * 7 * 5 * 3 * 1)
+    
+*/
+
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Class Name       : Factorial
+//  Description      : Contains function to calculate odd factorial of given number.
+//  Input            : Integer value
+//  Output           : Returns odd factorial
+//  Author           : Gavade Somanath Vilas
+//  Date             : 29/03/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Factorial
+{
+    public:
+        int iNo;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Constructor Name : Factorial (Parameterized Constructor)
+//  Description      : Initializes data member with given value.
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        Factorial(int A)
+        {
+            iNo = A;
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name    : OddFactorial
+//  Description      : Calculates product of all odd numbers up to given number.
+//  Input            : None (Uses class data member)
+//  Output           : Returns odd factorial
+//  Time Complexity  : O(N)
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        int OddFactorial()
+        {
+            int iCnt = 0, iFact = 1;
+
+            if(iNo < 0)
+            {
+                iNo = -iNo;
+            }
+
+            for(iCnt = 1; iCnt <= iNo; iCnt++)
+            {
+                if(iCnt % 2 != 0)
+                {
+                    iFact = iFact * iCnt;
+                }
+            }            
+
+            return iFact;
+        }
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Application Name : Odd factorial calculation using OOP
+//  Description      : This application accepts number from user, creates an object of Factorial class and returns odd factorial.
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iValue = 0;
+    int iRet = 0;
+
+    cout << "Enter a number : \n";
+    cin >> iValue;
+
+    Factorial fobj(iValue);
+
+    iRet = fobj.OddFactorial();
+
+    cout << "Odd factorial is : " << iRet << "\n";
+
+    return 0;
+}
