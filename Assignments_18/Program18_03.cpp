@@ -1,0 +1,99 @@
+/* 
+    3. Write a program to find the even factorial of a given number.
+
+    Input  : 5
+    Output : 8  (4 * 2)
+
+    Input  : -5
+    Output : 8  (4 * 2)
+
+    Input  : 10
+    Output : 3840  (10 * 8 * 6 * 4 * 2)
+    
+*/
+
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Class Name       : Factorial
+//  Description      : Contains function to calculate even factorial of given number.
+//  Input            : Integer value
+//  Output           : Returns even factorial
+//  Author           : Gavade Somanath Vilas
+//  Date             : 29/03/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Factorial
+{
+    public:
+        int iNo;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Constructor Name : Factorial (Parameterized Constructor)
+//  Description      : Initializes data member with given value.
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        Factorial(int A)
+        {
+            iNo = A;
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name    : EvenFactorial
+//  Description      : Calculates product of all even numbers up to given number.
+//  Input            : None (Uses class data member)
+//  Output           : Returns even factorial
+//  Time Complexity  : O(N)
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        int EvenFactorial()
+        {
+            int iCnt = 0, iFact = 1;
+
+            if(iNo < 0)
+            {
+                iNo = -iNo;
+            }
+
+            for(iCnt = 1; iCnt <= iNo; iCnt++)
+            {
+                if(iCnt % 2 == 0)
+                {
+                    iFact = iFact * iCnt;
+                }
+            }            
+
+            return iFact;
+        }
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Application Name : Even factorial calculation using OOP
+//  Description      : This application accepts number from user, creates an object of Factorial class and returns even factorial.
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iValue = 0;
+    int iRet = 0;
+
+    cout << "Enter a number : \n";
+    cin >> iValue;
+
+    Factorial fobj(iValue);
+
+    iRet = fobj.EvenFactorial();
+
+    cout << "Even factorial is : " << iRet << "\n";
+
+    return 0;
+}
